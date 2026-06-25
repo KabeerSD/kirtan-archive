@@ -1,0 +1,194 @@
+/* Kirtan Archive — simple, peaceful, minimal */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #faf7f2;
+  --white: #ffffff;
+  --text: #2c2a26;
+  --text-muted: #6b6560;
+  --border: #e8e2d9;
+  --accent: #8b7355;
+  --accent-hover: #6d5a44;
+  --shadow: rgba(44, 42, 38, 0.06);
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+/* Layout */
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* Header */
+
+.site-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.site-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+.site-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Back link */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Page heading */
+
+.page-heading {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Folder cards (homepage) */
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 520px) {
+  .folder-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.folder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.folder-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.folder-icon {
+  width: 64px;
+  height: 48px;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, #d4c4a8 0%, #c4b498 100%);
+  border-radius: 4px 4px 2px 2px;
+  position: relative;
+}
+
+.folder-icon::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 28px;
+  height: 10px;
+  background: linear-gradient(180deg, #d4c4a8 0%, #c4b498 100%);
+  border-radius: 3px 3px 0 0;
+}
+
+.folder-name {
+  margin: 0;
+  font-size: 1.05rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Recordings list */
+
+.recordings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recording {
+  padding: 1.25rem 1.25rem;
+  margin-bottom: 0.75rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.recording-title {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.recording audio {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+/* Empty state */
+
+.empty-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
