@@ -15,28 +15,45 @@
     </header>
 
     <main>
-      <ul class="recordings">
+      <section class="recording-player" data-recording-player>
+        <p class="now-playing-label">Now playing</p>
+        <h2 class="now-playing-title" data-current-title aria-live="polite">
+          Choose a recording
+        </h2>
 
-        <!--
-          TO ADD A NEW RECORDING:
-          1. Place the MP3 file in /audio/harpreet/
-          2. Copy the block below and paste it above this comment
-          3. Update the title and filename
-        -->
+        <audio controls preload="none" data-audio-player>
+          Your browser does not support audio playback.
+        </audio>
 
-        <li class="recording">
-          <span class="recording-title">Aad Sate Jugaad Sate</span>
-          <audio controls preload="none" src="https://kirtan-audio.s3.us-east-2.amazonaws.com/harpreet/Bhai-Harpreet-Singh-Ji-Aad-Sate-Jugaad-Sate.mp3">
-            Your browser does not support audio playback.
-          </audio>
-        </li>
+        <h2 id="harpreet-recordings-heading" class="recordings-heading">Recordings</h2>
 
-      </ul>
+        <ul class="recordings" aria-labelledby="harpreet-recordings-heading">
+
+          <!--
+            TO ADD A NEW RECORDING:
+            1. Copy one of the <li> blocks below
+            2. Paste it into this list
+            3. Update the title text and the public S3 URL in href
+          -->
+
+          <li>
+            <a
+              class="recording-link"
+              href="https://kirtan-audio.s3.us-east-2.amazonaws.com/harpreet/Bhai-Harpreet-Singh-Ji-Aad-Sate-Jugaad-Sate.mp3"
+            >
+              Aad Sate Jugaad Sate
+            </a>
+          </li>
+
+        </ul>
+      </section>
     </main>
 
     <footer class="site-footer">
       <p>Waheguru ji ka Khalsa, Waheguru ji ki Fateh</p>
     </footer>
   </div>
+
+  <script src="recordings.js"></script>
 </body>
 </html>
