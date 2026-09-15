@@ -180,7 +180,42 @@ body {
   width: 100%;
   max-width: 100%;
   height: 40px;
+  margin-bottom: 0.75rem;
+}
+
+.skip-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
   margin-bottom: 1.75rem;
+}
+
+.skip-button {
+  flex: 1 1 8.5rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: var(--text);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.skip-button:hover {
+  border-color: var(--accent);
+  background: #f5f0e8;
+}
+
+.skip-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--accent);
 }
 
 .recordings-heading {
